@@ -1,0 +1,30 @@
+import json
+import boto3
+import datetime
+
+
+def lambda_handler(event,context):
+        """
+        Adds a movie to the table.
+
+        :param title: The title of the movie.
+        :param year: The release year of the movie.
+        :param plot: The plot summary of the movie.
+        :param rating: The quality rating of the movie.
+        """
+        dynamodb = boto3.resource('dynamodb')
+        #table name
+        table = dynamodb.Table('YourDynamodb data')
+        ct = str(datetime.datetime.now())
+        
+        #Item list no need to copy me
+        try:
+            table.put_item(
+                Item={
+                    'time': ct,
+                    'ID': event['ID'],
+                    'info': event}
+                    )
+        except Exception as err:
+            print("Error occured")
+            raise
