@@ -1,2 +1,1 @@
-# MyProject
-All class work
+For CS332 Final project
