@@ -72,7 +72,6 @@ int main(int argc, char *argv[]){
 
 	while ((n = read(conn_fd, line, MAXLINE)) != 0){
 				//Get from client
-                //printf("line = %s with n = %d characters\n", line, n);
 				printf("Receive from Client: %s\n", line);
                 fflush(stdout);
                 
@@ -80,19 +79,19 @@ int main(int argc, char *argv[]){
 				//Send data to Server2
 				n = write(conn_fd2, line, MAXLINE);
 				//printf("send %s with n = %d characters\n", line, n);
+				printf("Send to Server2: %s\n", line);
+				
 
 				//Read from server2
 				m = read(conn_fd2, line, MAXLINE);
 				//printf("receive %s with m = %d characters\n", line, m);
 				printf("Receive from Server2: %s\n", line);
+				
 
-				fputs(line, stdout);
-
-				//Return to server
+				//Return to Client
 				m = write(conn_fd, line, n);
-                printf("write line = %s for m = %d characters\n", line, m);
+                printf("Send to Client: %s\n",line);
                 fflush(stdout);
-
 
         }
 

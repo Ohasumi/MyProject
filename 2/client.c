@@ -45,14 +45,14 @@ int main(int argc, char *argv[]){
         }
 
         while (fgets(line, MAXLINE, stdin) != NULL) {
-
+            
             n = write(conn_fd, line, MAXLINE);
-            printf("%s", line);
+            //printf("%s", line);
             m = read(conn_fd, line, MAXLINE);
-
+            printf("%s", line);
         }
 
 	close(conn_fd);
     printf("Closing TCP connections\n");
-    
+
 }

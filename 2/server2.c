@@ -56,13 +56,13 @@ int main(int argc, char *argv[]){
                 printf("write line = %s for m = %d characters\n", line, m);
                 fflush(stdout);
 		*/
-			printf("Receive %s with n = %d characters\n", line, n);
+			
+			printf("Receive: %s \n", line);
 			fflush(stdout);
 
-            m = write(conn_fd, strcat(line,serv_String), n);
+            m = write(conn_fd, line, n);
+			printf("Send: %s\n", line);
 			fflush(stdout);
-			printf("line = %s with n = %d characters\n", line, n);
-
         }
 
 	close(conn_fd);
