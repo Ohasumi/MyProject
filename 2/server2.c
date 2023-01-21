@@ -47,7 +47,7 @@ int main(int argc, char *argv[]){
 		printf("Accept: Error occured\n");
 		exit(1);
 	}
-	char serv_String[10] = "Server 2"
+	char serv_String[10] = "Server 2";
 	while ((n = read(conn_fd, line, MAXLINE)) != 0){
 		/*
                 printf("line = %s with n = %d characters\n", line, n);
@@ -56,12 +56,12 @@ int main(int argc, char *argv[]){
                 printf("write line = %s for m = %d characters\n", line, m);
                 fflush(stdout);
 		*/
-			printf("line = %s with n = %d characters\n", line, n);
+			printf("Receive %s with n = %d characters\n", line, n);
 			fflush(stdout);
 
             m = write(conn_fd, strcat(line,serv_String), n);
 			fflush(stdout);
-
+			printf("line = %s with n = %d characters\n", line, n);
 
         }
 

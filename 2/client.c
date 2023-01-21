@@ -20,6 +20,7 @@
 #define SERV_IP		"127.0.0.1"
 #define SERV_PORT 	18800
 
+
 #define	MAXLINE	100
 
 int conn_fd;
@@ -55,5 +56,6 @@ int main(int argc, char *argv[]){
         }
 
 	close(conn_fd);
+    printf("Closing TCP connections\n");
 
 }
