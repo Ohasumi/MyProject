@@ -64,7 +64,7 @@ int main(int argc, char *argv[]){
 			printf("Send: %s\n", line);
 			fflush(stdout);
         }
-
+	printf("Server1 Close Connection\n");
 	close(conn_fd);
 	close(lis_fd);
 

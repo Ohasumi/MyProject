@@ -94,9 +94,10 @@ int main(int argc, char *argv[]){
                 fflush(stdout);
 
         }
-
+	printf("Client Close Connection\n");
 	close(conn_fd);
 	close(conn_fd2);
 	close(lis_fd);
+	
 
 }
