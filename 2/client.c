@@ -47,15 +47,12 @@ int main(int argc, char *argv[]){
         while (fgets(line, MAXLINE, stdin) != NULL) {
 
             n = write(conn_fd, line, MAXLINE);
-            printf("send %s with n = %d characters\n", line, n);
+            printf("%s", line);
             m = read(conn_fd, line, MAXLINE);
-            printf("receive %s with m = %d characters\n", line, m);
-
-            fputs(line, stdout);
 
         }
 
 	close(conn_fd);
     printf("Closing TCP connections\n");
-
+    
 }
